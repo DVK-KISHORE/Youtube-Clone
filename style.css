@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body{
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 85px;
+    padding-right: 20px;
+    background-color: rgb(248,248,248);
+}
+
+header{
+    z-index: 100;
+}
+
+nav{
+    display: flex;
+    height: 55px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(228,228,228);
+    z-index: 1;
+}
+
+nav .left-section{
+    order: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav #menu{
+    height: 24px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav #youtube-logo{
+    height: 40px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+nav .middle-section{
+    order: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 65px;
+    margin-right: 35px;
+    max-width: 350px;
+}
+
+#search-button{
+    height: 39px;
+    width: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(244,244,244);
+    border: 1px solid rgb(192,192,192);
+    margin-left: -1px;
+    margin-right: 10px;
+}
+
+#search-button, #voice-search-button, #apps-container{
+    position: relative;
+}
+
+#search-button div, #voice-search-button div, #apps-container div, #notifications-icon-container #notifications{
+    position: absolute;
+    background-color: rgba(120,120,120,0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 500;
+    bottom: -45px;
+    opacity: 0;
+    transition: opacity 0.15s;
+
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#search-button:hover div, #voice-search-button:hover div, #apps-container:hover div, #notifications-icon-container:hover #notifications{
+    opacity: 1;
+}
+
+#search-button:hover{
+    cursor: pointer;
+}
+
+#search-button img{
+    height: 25px;
+}
+
+#voice-search-button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245,245,245);
+
+    border-radius: 50%;
+    border: none;
+}
+
+#voice-search-button:hover{
+    cursor: pointer;
+}
+
+#voice-search-button img{
+    height: 25px;
+}
+
+nav .right-section{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    order: 3;
+    width: 160px;
+    margin-right: 24px;
+    justify-content: space-between;
+}
+
+#youtube-apps-icon{
+    height: 24px;
+}
+
+#youtube-apps-icon{
+    cursor: pointer;
+}
+
+#apps-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#notifications-icon{
+    height: 24px;
+    margin-top: 4px;
+}
+
+#notifications-icon-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#notifications-count{
+    position: absolute;
+    top: -4px;
+    right: -12px;
+    background: red;
+    color: white;
+    font-family: Roboto;
+    font-size: 10px;
+    padding: 2px 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#notifications-icon:hover{
+    cursor: pointer;
+}
+
+nav #profile-picture{
+    height: 32px;
+    border-radius: 50%;
+}
+
+#profile-picture:hover{
+    cursor: pointer;
+}
+
+#search-bar{
+    flex: 1;
+    height: 35px;
+    padding-left: 10px;
+    font-size: 13px;
+    font-family: Roboto;
+
+    border: 1px solid rgb(192,192,192);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 3px rgba(0,0,0,0.05);
+    width: 0;
+}
+
+#search-bar::placeholder{
+    font-family: Roboto;
+    font-size: 13px;
+}
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 65px;
+    top: 55px;
+    background-color: white;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(228,228,228);
+    z-index: 1;
+}
+
+.thumbnail{
+    width: 100%;
+}
+
+.video-title{
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+p{
+    font-family: Roboto;
+    line-height: 20  px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.video-info-grid{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+.channel-picture img{
+    width: 37px;
+    border-radius: 50%;
+}
+
+.thumbnail-row{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.video-author,.video-stats{
+    font-size: 13px;
+    color: rgb(96,96,96); 
+    font-weight: normal;
+}
+
+.video-author{
+    margin-bottom: 3px;
+}
+
+.video-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+}
+
+.sidebar-link{
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.shorts{
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#shorts{
+    height: 33px;
+}
+
+.sidebar-link:hover{
+    background-color: rgb(235,235,235);
+}
+
+.shorts:hover{
+    background-color: rgb(235,235,235);
+}
+
+.sidebar-link img{
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+.sidebar-link div{
+    font-family: Roboto;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.shorts div{
+    font-family: Roboto;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.video-time{
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.75);
+    color: white;
+    position: absolute;
+    right: 7px;
+    bottom: 10px;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+@media(max-width: 750px){ 
+    body{
+        padding-left: 20px
+    }
+    .sidebar[data-visible="false"]{
+        transform: translate(-100%);
+        transition: transform 250ms ease-out;
+    }
+    .sidebar[data-visible="true"]{
+        width: 200px;
+        transform: translate(0%);
+        transition: transform 250ms ease-in;
+    }
+    .sidebar{
+        transform: translate(-100%);
+        transition: transform 250ms ease-out;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .sidebar::-webkit-scrollbar{
+        display: none;
+    }
+
+    .sidebar-link{
+        flex-direction: row;
+        gap: 20px;
+        padding-left: 20px;
+        justify-content: flex-start;
+    }
+    
+    .sidebar-link div{
+        font-size: 12px;
+    }
+
+    .shorts div{
+        font-size: 12px;
+    }
+    
+    .shorts{
+        flex-direction: row;
+        gap: 12px;
+        justify-content: flex-start;
+        padding-left: 9px;
+    }
+}
